@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../ThirdParty/jQueryUI/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../ThirdParty/Bootstrap/js/bootstrap.min.js"></script>
   </head>
-<body>
+<body onload="Init()">
 <script>
 $(function() {
 $( "#tabsPartnerEdit" ).tabs();
@@ -63,11 +63,6 @@ $( "#tabsPartnerEdit" ).tabs();
             <label class="col-sx-2 col-sm-1 control-label" for="partnerstatus">Partner Status:</label>
             <div class="col-sm-2">
                 <select    name="partnerstatus" id="partnerstatus" class="form-control">
-                    <option></option>
-                    <option value="01">ACTIVE</option>
-                    <option value="02">DIED</option>
-                    <option value="03">INACTIVE</option>
-                    <option value="04">MERGED</option>
                 </select>
             </div>
         </div>        
@@ -182,20 +177,7 @@ $( "#tabsPartnerEdit" ).tabs();
 			<div class="col-md-8">
 				<label class="col-sm-2 control-label" for="country">Country:</label>        
 					<div class="col-sm-4">
-					<select    name="country" id="country" class="form-control">
-						<option></option>
-						<option value="01">Jan (01)</option>
-						<option value="02">Feb (02)</option>
-						<option value="03">Mar (03)</option>
-						<option value="04">Apr (04)</option>
-						<option value="05">May (05)</option>
-						<option value="06">June (06)</option>
-						<option value="07">July (07)</option>
-						<option value="08">Aug (08)</option>
-						<option value="09">Sep (09)</option>
-						<option value="10">Oct (10)</option>
-						<option value="11">Nov (11)</option>
-						<option value="12">Dec (12)</option>
+					<select  id="country" name="country" class="form-control">
 					</select>            
 					</div>
     			<!-- County/State -->
@@ -245,11 +227,6 @@ $( "#tabsPartnerEdit" ).tabs();
 				<label class="col-sx-2 col-sm-2 control-label" for="locationtype">Location Type:</label>
 				<div class="col-sm-2">
 					<select    name="locationtype" id="locationtype" class="form-control">
-						<option></option>
-						<option value="01">ACTIVE</option>
-						<option value="02">DIED</option>
-						<option value="03">INACTIVE</option>
-						<option value="04">MERGED</option>
 					</select>
 				</div>
 			</div>
