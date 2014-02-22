@@ -5,8 +5,10 @@
 /// <param name="AColumnCode">name of the column for the code</param>
 /// <param name="AColumnDescription">name of the column for the description</param>
 /// <param name="ASelectID">id of the html select element for this combobox</param>
-function ComboboxInitValues(AWebServiceUrl, AWebServiceParameters, AWithEmptyOption, AColumnCode, AColumnDescription, ASelectID)
+/// <param name="AReturnParameterNumber">the result parameter contains the table at this position</param>
+function ComboboxInitValues(AWebServiceUrl, AWebServiceParameters, AWithEmptyOption, AColumnCode, AColumnDescription, ASelectID, AReturnParameterNumber)
 {
+    AReturnParameterNumber = (typeof AReturnParameterNumber === "undefined") ? 1 : AReturnParameterNumber;
     $.ajax({
       type: "POST",
       url: "../" + AWebServiceUrl,
@@ -16,13 +18,13 @@ function ComboboxInitValues(AWebServiceUrl, AWebServiceParameters, AWithEmptyOpt
       success: function(data, status, response) {
         result = JSON.parse(response.responseText);
         //console.debug(JSON.stringify(response.responseText));
-        //console.debug(JSON.stringify(result));
+        console.debug(JSON.stringify(result));
         if (result['d'] != 0)
         {
             //console.debug(JSON.stringify(result['d']));
             //console.debug(JSON.stringify(JSON.parse(result['d'])));
             
-            SearchResult = JSON.parse(result['d'])[1];
+            SearchResult = JSON.parse(result['d'])[AReturnParameterNumber];
             
             ParsedSearchResult = new Array();
             
