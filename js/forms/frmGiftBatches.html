@@ -152,28 +152,18 @@ $( "#tabsGiftBatches" ).tabs();
             <label class=" col-sx-4 col-sm-2 control-label" for="costcentre">Cost Centre:</label>        
             <div class="col-sm-3">
                 <select   name="costcentre" id="costcentre" class="form-control">
-                    <option></option>
-                    <option value="01">ACTIVE</option>
-                    <option value="02">DIED</option>
-                    <option value="03">INACTIVE</option>
-                    <option value="04">MERGED</option>
                 </select>
             </div>
             <label class="col-sx-4 col-sm-1 control-label" for="towncity">lable:</label>
         </div>    
     </div>
-    <!-- Bank Accunt -->
+    <!-- Bank Account -->
     <div class="form-group row">
         <div class="col-md-11">
             <!-- Bank Account -->
             <label class=" col-sx-4 col-sm-2 control-label" for="bankaccount">Bank Account:</label>
                 <div class="col-sm-3">
                     <select   name="bankaccount" id="bankaccount" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
                     </select>
                 </div>
             <label class="col-sx-4 col-sm-1 control-label" for="towncity">lable:</label>
@@ -204,11 +194,6 @@ $( "#tabsGiftBatches" ).tabs();
             <label class=" col-sx-4 col-sm-3 control-label" for="currencycode">Currency Code:</label>
             <div class="col-sm-2">
                 <select   name="currencycode" id="currencycode" class="form-control">
-                <option></option>
-                <option value="01">ACTIVE</option>
-                <option value="02">DIED</option>
-                <option value="03">INACTIVE</option>
-                <option value="04">MERGED</option>
                 </select>
             </div>
             <label class="col-sx-4 col-sm-1 control-label" for="towncity">lable:</label>      
@@ -232,11 +217,6 @@ $( "#tabsGiftBatches" ).tabs();
             <label class=" col-sx-4 col-sm-2 control-label" for="methodofpayment">Method of Payment:</label>
             <div class="col-sm-3">
                 <select   name="methodofpayment" id="methodofpayment" class="form-control">
-                <option></option>
-                <option value="01">ACTIVE</option>
-                <option value="02">DIED</option>
-                <option value="03">INACTIVE</option>
-                <option value="04">MERGED</option>
                 </select>
             </div>
         </div>
@@ -382,23 +362,13 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="methodofgiving">Method of Giving:</label>
                 <div class="col-sm-3">
                     <select   name="methodofgiving" id="methodofgiving" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
                     </select>
                 </div>
                 <div class="col-xs-1"></div>
                 <!-- Method of Payment -->
                 <label class=" col-sx-4 col-sm-2 control-label" for="methodofpayment">Method of Payment:</label>
                 <div class="col-sm-3">
-                    <select   name="methodofpayment" id="methodofpayment" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
+                    <select   name="methodofpayment" id="detailsmethodofpayment" class="form-control">
                     </select>
                 </div>
             </div>
@@ -416,10 +386,7 @@ $( "#tabsGiftBatches" ).tabs();
             <div class="col-sm-3">
                 <select   name="lettercode" id="lettercode" class="form-control">
                     <option></option>
-                    <option value="01">ACTIVE</option>
-                    <option value="02">DIED</option>
-                    <option value="03">INACTIVE</option>
-                    <option value="04">MERGED</option>
+                    <option value="01">NO*RECET</option>
                 </select>
             </div>
             </div>
@@ -523,11 +490,6 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="motivationgroup">Motivation Group:</label>
                 <div class="col-sx-2 col-sm-3">
                     <select   name="motivationgroup" id="motivationgroup" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
                     </select>
                 </div>
                 <label class="col-sx-4 col-sm-1 control-label" for="towncity">lable:</label>
@@ -536,11 +498,6 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="motivationdetail">Motivation Detail:</label>
                 <div class="col-sm-3">
                     <select   name="motivationdetail" id="motivationdetail" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
                     </select>
                 </div>
             </div>
@@ -550,13 +507,15 @@ $( "#tabsGiftBatches" ).tabs();
             <!-- Cost Centre -->
             <label class="col-sx-4 col-sm-2 control-label" for="costcentre">Cost Centre:</label>
                 <div class="col-sm-3">
-                    <input name="costcentre" type="text" value=""  class="form-control"/>
+                    <select   name="detailcostcentre" id="detailcostcentre" class="form-control">
+                    </select>
                 </div>
             <div class="col-xs-1"></div>
             <!-- Account -->
             <label class="col-sx-4 col-sm-2 control-label" for="account">Account:</label>
                 <div class="col-sm-3">
-                    <input name="account" type="text" value=""  class="form-control"/>
+                    <select   name="detailsaccount" id="detailsaccount" class="form-control">
+                    </select>
                 </div>
             </div>
         </div>
@@ -571,11 +530,10 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="for">for:</label>
                 <div class="col-sm-3">
                     <select   name="for" id="for" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
+                        <option value="01">Donor</option>
+                        <option value="02">Recipient</option>
+                        <option value="03">Both</option>
+                        <option value="04">Office</option>
                     </select>
                 </div>
             </div>
@@ -591,11 +549,10 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="for">for:</label>
                 <div class="col-sm-3">
                     <select   name="for" id="for" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
+                        <option value="01">Donor</option>
+                        <option value="02">Recipient</option>
+                        <option value="03">Both</option>
+                        <option value="04">Office</option>
                     </select>
                 </div>
             </div>
@@ -611,11 +568,10 @@ $( "#tabsGiftBatches" ).tabs();
                 <label class=" col-sx-4 col-sm-2 control-label" for="for">for:</label>
                 <div class="col-sm-3">
                     <select   name="for" id="for" class="form-control">
-                        <option></option>
-                        <option value="01">ACTIVE</option>
-                        <option value="02">DIED</option>
-                        <option value="03">INACTIVE</option>
-                        <option value="04">MERGED</option>
+                        <option value="01">Donor</option>
+                        <option value="02">Recipient</option>
+                        <option value="03">Both</option>
+                        <option value="04">Office</option>
                     </select>
                 </div>
             </div>

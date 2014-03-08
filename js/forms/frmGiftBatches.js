@@ -1,5 +1,5 @@
 function Init() {
-
+// Batches
 // year
 ComboboxInitValues(
                     "serverMFinance.asmx/TGiftTransactionWebConnector_GetAvailableGiftYears",
@@ -29,21 +29,130 @@ ComboboxInitValues(
                     "a_cost_centre_code_c",
                     "#costcentre");
 
-// bank account
-// "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2"
-// 'ACacheableTable': 'AccountList'
-// TODO: only "BankAccountFlag":true
-
-// Method of Payment: 
-// see https://github.com/tpokorra/openpetra.js/blob/master/csharp/ICT/Petra/Client/MFinance/logic/FinanceControls.cs#L572
-// serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable
-// MethodOfPaymentList
+// Bank Account
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2", 
+                    {                                    
+                        'ACacheableTable': 'AccountList',
+                        'AHashCode': '',
+                        'ALedgerNumber': '43'
+                      // TODO: only "BankAccountFlag":true   
+                    },
+                    false, // AWithEmptyOption
+                    "a_account_code_c",
+                    "a_account_code_c",
+                    "#bankaccount");
+// Currency Code
+ComboboxInitValues(
+                    "serverMPartner.asmx/TPartnerCacheableWebConnector_GetCacheableTable",
+                    {
+                        'ACacheableTable': 'CurrencyCodeList',
+                        'AHashCode': '',
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    "a_currency_code_c",
+                    "a_currency_name_c",
+                    "#currencycode");        
+       
+// Method of Payment:
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable",
+                    {
+                        'ACacheableTable': 'MethodOfPaymentList',
+                        'AHashCode': '',
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    
+                    "#methodofpayment"); 
 // but: the demodatabase does not return any values!
 
-// Currency Code:
-// see https://github.com/tpokorra/openpetra.js/blob/master/csharp/ICT/Petra/Client/MFinance/Gui/Gift/UC_GiftBatches.yaml#L73
-// and https://github.com/tpokorra/openpetra.js/blob/master/csharp/ICT/Petra/Client/CommonControls/Gui/cmbAutoPopulatedComboBox.cs#L531
-// serverMPartner.asmx/TPartnerCacheableWebConnector_GetCacheableTable
-// CurrencyCodeList
+// Details
+// Method of Giving
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable",
+                    {
+                        'ACacheableTable': 'MethodOfGivingList',
+                        'AHashCode': '',
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+
+                    "#methodofgiving");
+                    
+// Method of Payment
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable",
+                    {
+                        'ACacheableTable': 'MethodOfPaymentList',
+                        'AHashCode': '',
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+
+                    "#detailsmethodofpayment"); 
+
+// Key Ministry 
+
+// Motivation Group
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2",
+                    {
+                        'ACacheableTable': 'MotivationGroupList',
+                        'AHashCode': '',
+                        'ALedgerNumber': '43'
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    "a_motivation_group_code_c",
+                    "a_motivation_group_description_c",
+                                       
+                    "#motivationgroup");    
+
+// Motivation Detail
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2",
+                    {
+                        'ACacheableTable': 'MotivationList',
+                        'AHashCode': '',
+                        'ALedgerNumber': '43'
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    "a_motivation_group_code_c",
+                    "a_motivation_detail_code_c",
+                                                          
+                    "#motivationdetail");   
+
+// Cost Centre
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2",
+                    {
+                        'ACacheableTable': 'CostCentreList',
+                        'AHashCode': '',
+                        'ALedgerNumber': '43'
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    "a_cost_centre_code_c",
+                    "a_cost_centre_to_report_to_c",
+                    
+                    "#detailcostcentre");            
+
+// Account                    
+ComboboxInitValues(
+                    "serverMFinance.asmx/TFinanceCacheableWebConnector_GetCacheableTable2",
+                    {
+                        'ACacheableTable': 'AccountList',
+                        'AHashCode': '',
+                        'ALedgerNumber': '43'
+                      // TODO: only "BankAccountFlag":true
+                    },
+                    false, // AWithEmptyOption
+                    "a_account_code_c",
+                    "a_account_code_short_desc_c",
+                    
+                    "#detailsaccount");                                                                               
 
 }
