@@ -11,17 +11,31 @@ function ExportAllData() {
         result = JSON.parse(response.responseText);
         if (result['d'] != 0)
         {
-            // using download feature from HTML5, see http://caniuse.com/download
-            // and http://www.w3.org/TR/html/links.html#downloading-resources
-            var pom = document.createElement('a');
-            pom.setAttribute('href', 'data:application/gzip;base64,' + encodeURIComponent(result['d']));
-            pom.setAttribute('download', "exportedDatabase.yml.gz");
-            
+            //data = JXG.Util.Base64.decodeAsArray(result['d']);
+            data = result['d'];
+            //console.log(data);
+            var byteString = atob(data);
+
+            // Convert that text into a byte array.
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+
+            var blob = new Blob([ia], {type : "application/gzip"});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.style = "display: none";
+            a.href = url;
+            a.download = "exportedDatabase.yml.gz";
+
             // For Mozilla we need to add the link, otherwise the click won't work
             // see https://support.mozilla.org/de/questions/968992
-            document.body.appendChild(pom);
-            
-            pom.click();
+            document.body.appendChild(a);
+
+            a.click();
+            URL.revokeObjectURL(url);
         }
         else
         {
